@@ -9,23 +9,28 @@ const useDarkMode = (key, initialValue) => {
   const [storedValue, setStoredValue] = useLocalStorage(key, initialValue);
 // Manipulating DOM directly so need useEffect for side effect 
 useEffect(() => {
-let body = document.querySelector(".body");
+// create var to match body html element 
+let body = document.querySelector("body");
 // Inside useEffect, check to see if the value from `useLocalStorage` is true or false.
-
+console.log(body);
+console.log(useLocalStorage);
 // If it's true, add the class `dark-mode` to the `body` element.
 
 if (useLocalStorage === true) {
-    return (
+        return (
      body.classList.add("dark-mode");
     );
   } 
   // If it's false, remove the class from the `body` element.
   else {
     return (
-    body.classList.add("dark-mode");
+    body.classList.add("dark-mode"); )
 
-    ); [storedValue]);}
+}, [storedValue]);
 
+// Finally, we need to return something out of here so we can use this in our app. Need to know if dark mode is enabled. 
+// need a setter function to toggle dark mode. Forward the value and the setter that were returned out of the `useLocalStorage` call in an array. 
+return [storedValue, setStoredValue];
 
 export default useDarkMode;
 
