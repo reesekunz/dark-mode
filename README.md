@@ -21,6 +21,7 @@ In this project you'll take this crypto currency tracker app and build two custo
 - [ ] Clone your OWN version of the repository in your terminal
 - [ ] CD into the project base directory `cd dark-mode`
 - [ ] Download project dependencies by running one of these two commands `yarn` or `npm install`
+- [ ] instal `yarn add node-sass`
 - [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
