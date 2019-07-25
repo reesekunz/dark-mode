@@ -1,27 +1,28 @@
 import { useEffect } from "react";
-import useLocalStorage from "./useLocalStorage";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const useDarkMode = () => {
   // Call `useLocalStorage` and pass in the key you want to use to store whether or not dark mode is enabled.
   // this hook returns an array with a value and a setter in an array, exactly like the state hook, so make sure to capture those values in a `const` - `const [someValue, setSomeValue] = useLocalStorage('your key here')`
-  const [storedValue, setStoredValue] = useLocalStorage("false");
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode");
   // Manipulating DOM directly so need useEffect for side effect
   useEffect(() => {
-    // create var to match body html element
-    let body = document.querySelector("body");
     // Inside useEffect, check to see if the value from `useLocalStorage` is true or false.
 
     // If it's true, add the class `dark-mode` to the `body` element.
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    } else document.body.classList.remove("dark-mode");
+  }, [darkMode]);
 
-    if (storedValue === "true") {
-      body.classList.add("dark-mode");
-    } else body.classList.remove("dark-mode");
-  }, [storedValue]);
+  console.log("dark mode", darkMode);
+  //console.log("local storage", localStorage)
+  //console.log(localStorage.getItem)
 
   // Finally, we need to return something out of here so we can use this in our app. Need to know if dark mode is enabled.
   // need a setter function to toggle dark mode. Forward the value and the setter that were returned out of the `useLocalStorage` call in an array.
 
-  return [storedValue, setStoredValue];
+  return [darkMode, setDarkMode];
 };
 
 export default useDarkMode;
