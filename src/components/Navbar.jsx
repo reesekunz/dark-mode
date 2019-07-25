@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import DarkMode hook 
-import { useDarkMode } from "../hooks/useDarkMode"
+
+import useDarkMode from "../hooks/useDarkMode"
 
 const Navbar = () => {
   // Looking at this component, we are controlling the toggle with some state. The state hook here returns a `darkMode` value, and a `setDarkMode` function. 
