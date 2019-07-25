@@ -83,10 +83,10 @@ export const useLocalStorage = (key, initialValue) => {
 ```
 
 - Remember we're trying to use this hook like this: `const [name, setName] = useLocalStorage('name', 'Dustin')`. So far we have made the value part of the hook, but not the setter. Let's go ahead and create a setter function, and return that in the array as well.
-  - inside the hook, write a function called `setValue` that takes a `value` parameter
-  - In `setValue`, set the `value` to localStorage using the `key` that was passed into the hook itself
-  - Also, update the state of `storedValue` with `value` as well
-  - Add `setValue` to the array that is being returned out of this hook
+  - inside the hook, write a function called `setValue` that takes a `value` parameter✅
+  - In `setValue`, set the `value` to localStorage using the `key` that was passed into the hook itself✅
+  - Also, update the state of `storedValue` with `value` as well✅
+  - Add `setValue` to the array that is being returned out of this hook✅
   - `setValue` should look something like this:
 
 ```js
@@ -102,10 +102,10 @@ We're going to use this inside our dark mode hook, but this can be used anywhere
 
 ## STEP 2 - useDarkMode
 
-- Inside the `hooks` directory, add a new file called `useDarkMode`.
-- Build a function called `useDarkMode`.
-- Import `useLocalStorage`
-- Call `useLocalStorage` and pass in the key you want to use to store whether or not dark mode is enabled. Remember, this hook returns an array with a value and a setter in an array, exactly like the state hook, so make sure to capture those values in a `const` - `const [someValue, setSomeValue] = useLocalStorage('your key here')`
+- Inside the `hooks` directory, add a new file called `useDarkMode`.✅
+- Build a function called `useDarkMode`.✅
+- Import `useLocalStorage`✅
+- Call `useLocalStorage` and pass in the key you want to use to store whether or not dark mode is enabled. Remember, this hook returns an array with a value and a setter in an array, exactly like the state hook, so make sure to capture those values in a `const` - `const [someValue, setSomeValue] = useLocalStorage('your key here')`✅
 - Now to add the class to the body. If we need to manipulate the DOM directly, how do we do that? Any direct DOM manipulation is considered a side effect, right? So let's use the effect hook.
   -Import and set up your effect hook.
   - Inside it, check to see if the value from `useLocalStorage` is true or false.
