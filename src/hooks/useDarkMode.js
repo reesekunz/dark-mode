@@ -7,31 +7,24 @@ const useDarkMode = (key, initialValue) => {
 // Call `useLocalStorage` and pass in the key you want to use to store whether or not dark mode is enabled. 
 // this hook returns an array with a value and a setter in an array, exactly like the state hook, so make sure to capture those values in a `const` - `const [someValue, setSomeValue] = useLocalStorage('your key here')`
   const [value, setValue] = useLocalStorage(key, initialValue);
-
+// Manipulating DOM directly so need useEffect for side effect 
 useEffect(() => {
+let body = document.querySelector(".body");
+// Inside useEffect, check to see if the value from `useLocalStorage` is true or false.
 
-}
-)
+// If it's true, add the class `dark-mode` to the `body` element.
 
-//   const handleChanges = updatedValue => {
-//     setValue(updatedValue);
-//   };
-//   return [value, setValue, handleChanges];
-// };
+if (useLocalStorage === true) {
+    return (
+     body.classList.add("dark-mode");
+    );
+  } 
+  // If it's false, remove the class from the `body` element.
+  else {
+    return (
+    body.classList.add("dark-mode");
 
-// const useLocalStorage = (key, initialValue) => {
-//   const [storedValue, setStoredValue] = useState(() => {
-//     const item = window.localStorage.getItem(key);
-//     return item ? JSON.parse(item) : initialValue;
-//   });
-//   const setValue = value => {
-//     setStoredValue(value);
-//     window.localStorage.setItem(key, JSON.stringify(value));
-//   };
-//   return [storedValue, setValue];
-// };
-
-
+    ); } 
 
 export default useDarkMode;
 
