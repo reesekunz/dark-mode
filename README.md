@@ -1,4 +1,5 @@
 # Module Project: Composing Stateful Logic - Dark Mode
+updating branch
 
 This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored Form management in React. You learned what stateful logic is, how to build custom hooks, how to compose multiple hooks together, and how to use mocks and spies in testing. In your project you will demonstrate proficiency of these subjects and principles by creating an application using each of these.
 
@@ -80,7 +81,6 @@ export const useLocalStorage = (key, initialValue) => {
 
   return [storedValue];
 };
-```
 
 - Remember we're trying to use this hook like this: `const [name, setName] = useLocalStorage('name', 'Dustin')`. So far we have made the value part of the hook, but not the setter. Let's go ahead and create a setter function, and return that in the array as well.
   - inside the hook, write a function called `setValue` that takes a `value` parameter✅

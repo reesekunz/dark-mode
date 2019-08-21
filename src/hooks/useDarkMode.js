@@ -16,7 +16,7 @@ const useDarkMode = () => {
   }, [darkMode]);
 
   console.log("dark mode", darkMode);
-  //console.log("local storage", localStorage)
+  console.log("local storage", localStorage)
   //console.log(localStorage.getItem)
 
   // Finally, we need to return something out of here so we can use this in our app. Need to know if dark mode is enabled.
